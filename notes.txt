@@ -1,0 +1,14 @@
+Folder Naming Conventions:
+    "(auth)/login": can directly access /login in url, no need to put "app"
+    "_": removes in routing, use UTF-8 encoding to bypass "%5F"s
+    [productID]: Allows anything to be inputed at that level of the URL, can be obtained as a var to be used in a page
+    [...someName]: Allows anything to be inputed at that level and their children level, can be obtained as a var to be used in a page
+    [[...someName]]: Like above, but it can be empty instead of requiring it to be filled
+
+
+Features: 
+- Auto apply jobs
+- AI ranking
+- Auto CV creator
+- Deep (AI) Research
+- Application tracker

@@ -1,0 +1,32 @@
+name: Deploy to Ubuntu Server
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            cd ~/lightnessJobSearch
+            export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+
+            # 1. Get latest code
+            git fetch origin master
+            git reset --hard origin/master
+
+            # 2. Install dependencies (Using 'ci' instead of 'install')
+            # 'npm ci' deletes node_modules automatically and follows the lockfile strictly.
+            # Since we fixed the lockfile on Windows, this will now work!
+            npm ci
+
+            # 3. Build and Start
+            npm run build
+            pm2 restart nextjs-app

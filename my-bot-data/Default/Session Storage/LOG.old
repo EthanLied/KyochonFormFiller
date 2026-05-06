@@ -1,0 +1,9 @@
+2026/02/03-00:07:42.699 a00 Reusing MANIFEST D:\Desktop\Programing\Website 6 (Lightness)\lightness\my-bot-data\Default\Session Storage/MANIFEST-000001
+2026/02/03-00:07:42.703 a00 Recovering log #150
+2026/02/03-00:07:42.708 a00 Reusing old log D:\Desktop\Programing\Website 6 (Lightness)\lightness\my-bot-data\Default\Session Storage/000150.log 
+2026/02/03-00:07:56.239 fb0 Level-0 table #153: started
+2026/02/03-00:07:56.275 a00 Current memtable full; waiting...
+2026/02/03-00:07:56.299 fb0 Level-0 table #153: 39235 bytes OK
+2026/02/03-00:07:56.591 fb0 Delete type=0 #150
+2026/02/03-00:07:56.593 fb0 Level-0 table #155: started
+2026/02/03-00:07:56.905 fb0 Level-0 table #155: 149589 bytes OK

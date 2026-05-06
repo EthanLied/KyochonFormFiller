@@ -1,0 +1,18 @@
+2026/02/03-00:08:14.269 12bc Reusing MANIFEST D:\Desktop\Programing\Website 6 (Lightness)\lightness\my-bot-data\Default\Session Storage/MANIFEST-000001
+2026/02/03-00:08:14.274 12bc Recovering log #152
+2026/02/03-00:08:14.275 12bc Level-0 table #155: started
+2026/02/03-00:08:14.418 12bc Level-0 table #155: 149589 bytes OK
+2026/02/03-00:08:14.419 12bc Recovering log #154
+2026/02/03-00:08:14.424 12bc Reusing old log D:\Desktop\Programing\Website 6 (Lightness)\lightness\my-bot-data\Default\Session Storage/000154.log 
+2026/02/03-00:08:14.524 12bc Delete type=0 #152
+2026/02/03-00:08:14.525 c90 Compacting 4@0 + 1@1 files
+2026/02/03-00:08:14.666 c90 Generated table #156@0: 655 keys, 194976 bytes
+2026/02/03-00:08:14.666 c90 Compacted 4@0 + 1@1 files => 194976 bytes
+2026/02/03-00:08:14.782 c90 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/02/03-00:08:14.783 c90 Delete type=2 #146
+2026/02/03-00:08:14.783 c90 Delete type=2 #148
+2026/02/03-00:08:14.783 c90 Delete type=2 #149
+2026/02/03-00:08:14.783 c90 Delete type=2 #153
+2026/02/03-00:08:14.783 c90 Delete type=2 #155
+2026/02/03-00:08:29.264 12bc Level-0 table #158: started
+2026/02/03-00:08:29.582 12bc Level-0 table #158: 38525 bytes OK

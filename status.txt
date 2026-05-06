@@ -1,0 +1,6 @@
+- Review data scraping not resolved
+- Real time updates
+- Error Status for halfway errorss
+- Resolve incomplete amount of jobs
+- When desc is too long, use pop up card
+- Resolve inconsistent page returns from proxy locations

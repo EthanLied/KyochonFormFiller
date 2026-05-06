@@ -7,6 +7,7 @@ import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 export interface scrapeResult {
   result: boolean
   resultMessage: string
+  credentials: string
 }
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
@@ -24,10 +25,12 @@ export async function formFiller(): Promise<scrapeResult> {
 
   let browser: any
   let body: string | undefined
+  let password
+  let email
 
   try {
 
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 1; i++) {
 
       // Init browser
       const { browser, kyoChonPage } = await launchBrowser({ proxy: false });
@@ -54,7 +57,7 @@ export async function formFiller(): Promise<scrapeResult> {
       // Temp mail page
       await tempMailPage.bringToFront();
       await (await tempMailPage.waitForSelector(`::-p-xpath(/html/body/div[3]/div/div/div[2]/div[1]/form/div[2]/button)`, { timeout: 3000 })).click();
-      const email = await tempMailPage.evaluate(() => navigator.clipboard.readText());
+      email = await tempMailPage.evaluate(() => navigator.clipboard.readText());
       await kyoChonPage.bringToFront();
 
 
@@ -70,7 +73,7 @@ export async function formFiller(): Promise<scrapeResult> {
       for (let i = 0; i < 7; i++) await phoneNumInput.type(String(randNum()));
       await (await kyoChonPage.waitForSelector(`::-p-xpath(/html/body/div[5]/div[1]/div/div[3]/div/div[2]/form/button)`, { timeout: 300000 })).click();
 
-      const password = randPass()
+      password = randPass()
 
       await (await kyoChonPage.waitForSelector(`::-p-xpath(/html/body/div[5]/div[1]/div/div[3]/div/div[2]/form/div[1]/div/input)`, { timeout: 300000 })).type(password);
       await (await kyoChonPage.waitForSelector(`::-p-xpath(/html/body/div[5]/div[1]/div/div[3]/div/div[2]/form/div[2]/div/input)`, { timeout: 300000 })).type(password);
@@ -110,6 +113,7 @@ export async function formFiller(): Promise<scrapeResult> {
       await (await kyoChonPage.waitForSelector(`::-p-xpath(/html/body/div[5]/div[1]/div/div[3]/div/div[2]/form/div/input)`, { timeout: 300000 })).type(code);
       await (await kyoChonPage.waitForSelector(`::-p-xpath(/html/body/div[5]/div[1]/div/div[3]/div/div[2]/form/button)`, { timeout: 300000 })).click();
 
+      await delay(5000);
       browser?.close()
     }
   }
@@ -124,6 +128,7 @@ export async function formFiller(): Promise<scrapeResult> {
   return {
     result: true,
     resultMessage: body ?? '',
+    credentials: `\nEmail: ${email} Password: ${password}\n Try it out at: https://loyalty.kyochon.com.my/!`
   }
 
 }

@@ -12,3 +12,6 @@ Features:
 - Auto CV creator
 - Deep (AI) Research
 - Application tracker
+
+
+- Handle no results returned
